@@ -9,13 +9,13 @@ class FavoritePostController extends Controller
 {
     public function store(Request $request, $id)
     {
-        \Auth::favorittings()->favorite($id);
+        \Auth::user()->favorite($id);
         return redirect()->back();
     }
 
     public function destroy($id)
     {
-        \Auth::favorittings()->unfavorite($id);
+       \Auth::user()->unfavorite($id);
         return redirect()->back();
     }
 }
